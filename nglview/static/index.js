@@ -51,7 +51,10 @@ define(["jupyter-js-widgets"], function(__WEBPACK_EXTERNAL_MODULE_2__) { return 
 	// Some static assets may be required by the custom widget javascript. The base
 	// url for the notebook is not known at build time and is therefore computed
 	// dynamically.
-	__webpack_require__.p = document.querySelector('body').getAttribute('data-base-url') + 'nbextensions/nglview/';
+	//
+	
+	// remove?
+	// __webpack_public_path__ = document.querySelector('body').getAttribute('data-base-url') + 'nbextensions/nglview/';
 	
 	// Export widget models and views, and the npm package version number.
 	
@@ -81,8 +84,11 @@ define(["jupyter-js-widgets"], function(__WEBPACK_EXTERNAL_MODULE_2__) { return 
 /***/ function(module, exports, __webpack_require__) {
 
 	var widgets = __webpack_require__(2);
-	// use npm version
 	var NGL = __webpack_require__(3);
+	// require('jquery');
+	// require('jquery-ui');
+	// var $ = require('jquery-ui');
+	// var $ = require(['jquery', 'jquery-ui']);
 	
 	var NGLView = widgets.DOMWidgetView.extend({
 	
@@ -1367,8 +1373,8 @@ define(["jupyter-js-widgets"], function(__WEBPACK_EXTERNAL_MODULE_2__) { return 
 /***/ function(module, exports) {
 
 	module.exports = {
-		"name": "nglview-js",
-		"version": "0.5.2",
+		"name": "nglview",
+		"version": "0.5.3",
 		"description": "nglview",
 		"author": "Alexander S. Rose",
 		"license": "MIT",
@@ -1390,10 +1396,13 @@ define(["jupyter-js-widgets"], function(__WEBPACK_EXTERNAL_MODULE_2__) { return 
 		"devDependencies": {
 			"json-loader": "^0.5.4",
 			"webpack": "^1.12.14",
+			"@jupyterlab/extension-builder": "^0.8.1",
 			"ngl": "0.10.0-dev.3"
 		},
 		"dependencies": {
-			"jupyter-js-widgets": "^1.1.1",
+			"jquery": "^2.1.4",
+			"jupyter-js-widgets": "^2.0.6",
+			"@jupyterlab/nbwidgets": "^0.6.0",
 			"underscore": "^1.8.3"
 		}
 	};
